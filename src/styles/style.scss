@@ -2,6 +2,65 @@
 
 body{
   background-color: white;
+  box-sizing: border-box;
+  overflow-X: hidden;
+  .btn-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .btn {
+    display: inline-block;
+    font-size: rem(40);
+    font-weight: 600;
+    border: none;
+    border-radius: rem(30);
+    padding: rem(26) rem(113);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+    margin-top: rem(50);
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    &:active {
+      transform: translateY(0);
+      box-shadow: none;
+    }
+
+    &--primary {
+      background-color: #CBE5F5;
+      color: #000;
+
+      &:hover {
+        background-color: darken(#CBE5F5, 10%);
+      }
+    }
+
+    &--secondary {
+      background-color: #fff;
+      color: #0077ff;
+      border: 2px solid #0077ff;
+
+      &:hover {
+        background-color: #e6f0ff;
+      }
+    }
+
+    &--ghost {
+      background: transparent;
+      color: #0077ff;
+      border: 2px solid transparent;
+
+      &:hover {
+        border-color: #0077ff;
+        background: rgba(0, 119, 255, 0.1);
+      }
+    }
+  }
   li{
     list-style: none;
   }
@@ -15,14 +74,14 @@ body{
   display: flex;
   gap: rem(42);
   justify-content: center;
-
+  margin-top: rem(40);
   &__menu {
     font-size: rem(40);
     font-weight: 600;
 
     &__list {
       display: flex;
-      gap: rem(10);
+      gap: rem(40);
       list-style: none;
       align-items: center;
     }
@@ -117,5 +176,148 @@ body{
       text-decoration: none;
       color: black;
     }
+  }
+}
+.hero{
+  margin-top: rem(80);
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    h1{
+      font-size: rem(50);
+    }
+  }
+  &__description {
+    display: flex;
+    flex-basis: 50%;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    background-color: #CBE5F5;
+    border-radius: rem(20);
+    width: rem(1440);
+    padding: rem(20);
+    p{
+      font-size: rem(36);
+    }
+  }
+}
+.advantages{
+  max-width: rem(1140);
+  margin: rem(80) auto;
+  h2{
+    font-size: rem(40);
+    font-weight: 600;
+    text-align: center;
+    align-items: center;
+  }
+  &__content{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    justify-content: center;
+    gap: rem(40);
+    margin-top: rem(60);
+    text-align: center;
+  }
+  &__item{
+    img{
+      width: rem(150);
+      height: rem(150);
+      margin-bottom: rem(20);
+    }
+    h3{
+      font-size: rem(24);
+      font-weight: 600;
+      margin-bottom: rem(20);
+    }
+    p{
+      font-size: rem(20);
+      font-weight: 400;
+    }
+  }
+}
+.steps {
+  max-width: rem(900);
+  margin: 0 auto;
+  padding: rem(40) rem(20);
+  position: relative;
+
+  &__title {
+    text-align: center;
+    margin-bottom: rem(50);
+    font-size: rem(50);
+  }
+  &__subtitle {
+    font-size: rem(28);
+  }
+  &__text{
+    font-size: rem(20);
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+    position: relative;
+
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 10%;
+      bottom: 0;
+      left: 50%;
+      width: 2px;
+      height: rem(570);
+      background: #000; // линия
+      transform: translateX(-50%);
+    }
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    &--left {
+      justify-content: flex-start;
+      text-align: right;
+
+      .steps__content {
+        margin-right: auto;
+        padding-right: 80px;
+      }
+    }
+
+    &--right {
+      justify-content: flex-end;
+      text-align: left;
+
+      .steps__content {
+        margin-left: auto;
+        padding-left: 80px;
+      }
+    }
+  }
+
+  &__circle {
+    width: 102px;
+    height: 102px;
+    background: #CBE5F5;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: rem(50);
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  &__content {
+    max-width: 300px;
   }
 }
