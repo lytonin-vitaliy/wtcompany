@@ -1,22 +1,30 @@
 import './styles/style.scss'
 
 
-const modal = document.getElementById("leadModal");
-const openBtns = document.querySelectorAll(".btn--primary");
-const closeBtn = modal.querySelector(".modal__close");
-const overlay = modal.querySelector(".modal__overlay");
+document.addEventListener("DOMContentLoaded", () => {
+    const modal = document.getElementById("leadModal");
 
-// открыть на любую кнопку с классом .btn--primary
-openBtns.forEach(btn => {
-    btn.addEventListener("click", () => {
-        modal.classList.add("active");
+    // Открытие: все внешние .btn--primary (которые НЕ внутри модалки)
+    document.querySelectorAll('.btn--primary').forEach(btn => {
+        if (!btn.closest('.modal')) {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                modal.classList.add('active');
+            });
+        }
     });
-});
 
-// закрыть
-closeBtn.addEventListener("click", () => {
-    modal.classList.remove("active");
-});
-overlay.addEventListener("click", () => {
-    modal.classList.remove("active");
+    // Закрытие по overlay и крестику
+    modal.addEventListener('click', (e) => {
+        if (e.target.matches('[data-modal-close], .modal__overlay')) {
+            modal.classList.remove('active');
+        }
+    });
+
+    // Закрытие по Esc
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            modal.classList.remove('active');
+        }
+    });
 });

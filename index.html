@@ -163,14 +163,23 @@
           </div>
         </footer>
     <script type="module" src="/src/main.js"></script>
-        <div class="modal" id="leadModal">
-          <div class="modal__overlay"></div>
+        <div class="modal" id="leadModal" role="dialog" aria-modal="true" aria-labelledby="leadModalTitle">
+          <div class="modal__overlay" data-modal-close></div>
           <div class="modal__content">
-            <button class="modal__close">&times;</button>
-            <h2>Получите бесплатную консультацию</h2>
-            <form class="modal__form">
-              <input type="text" placeholder="Ваше имя" required>
-              <input type="tel" placeholder="+7 (___) ___-__-__" required>
+            <button class="modal__close" aria-label="Закрыть" data-modal-close>&times;</button>
+            <h2 id="leadModalTitle" class="modal__title">Получите бесплатную консультацию</h2>
+
+            <form class="modal__form" action="#" method="post">
+              <div class="modal__form-group">
+                <label for="leadName" class="visually-hidden">Ваше имя</label>
+                <input id="leadName" name="name" type="text" placeholder="Ваше имя" required>
+              </div>
+
+              <div class="modal__form-group">
+                <label for="leadPhone" class="visually-hidden">Телефон</label>
+                <input id="leadPhone" name="phone" type="tel" placeholder="+7 (___) ___-__-__" required>
+              </div>
+
               <button type="submit" class="btn btn--primary">Отправить</button>
             </form>
           </div>
