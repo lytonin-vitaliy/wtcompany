@@ -326,6 +326,13 @@ body{
   padding: 40px;
   border: 1px solid #ddd;
 
+  &__wrapper{
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+
   &__content {
     max-width: 500px;
   }
@@ -389,4 +396,97 @@ body{
   grid-template-columns: 1fr 1fr;
   gap: 40px;
   align-items: center;
+}
+
+.footer-wrapper{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &__back{
+    display: flex;
+    flex-direction: column;
+    content: '';
+    background-image: url(../images/footer_bgc.png);
+    background-repeat: no-repeat;
+    width: rem(1469);
+    height: rem(680);
+    justify-content: center;
+    align-items: center;
+    gap: rem(50);
+    &__logo {
+      display: flex;
+    }
+  }
+  &__content{
+    h3{
+      font-size: rem(50);
+    }
+
+    a{
+      font-size: rem(50);
+      color: #000;
+    }
+  }
+  span{
+    font-weight: 800;
+  }
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+
+  &.active {
+    display: flex;
+  }
+
+  &__overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+  }
+
+  &__content {
+    position: relative;
+    background: #fff;
+    padding: rem(32);
+    border-radius: rem(16);
+    z-index: 10;
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+  }
+
+  &__close {
+    position: absolute;
+    top: rem(16);
+    right: rem(16);
+    font-size: rem(24);
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: rem(16);
+
+    input {
+      padding: rem(12.8);
+      border: 1px solid #ddd;
+      border-radius: rem(8);
+      font-size: rem(16);
+    }
+
+    button {
+      cursor: pointer;
+    }
+  }
 }
