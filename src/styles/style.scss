@@ -1,5 +1,12 @@
 @use 'functions' as *;
+@use 'var.scss' as *;
 
+
+html, body {
+  box-sizing: border-box;
+  width: 100%;
+  overflow-x: hidden;
+}
 body{
   background-color: white;
   box-sizing: border-box;
@@ -75,9 +82,12 @@ body{
   gap: rem(42);
   justify-content: center;
   margin-top: rem(40);
+
   &__menu {
     font-size: rem(40);
     font-weight: 600;
+
+
 
     &__list {
       display: flex;
@@ -127,6 +137,7 @@ body{
         color: black;
         text-decoration: none;
 
+
         &:hover {
           background-color: #CBE5F5;
         }
@@ -155,6 +166,7 @@ body{
     border-radius: rem(20);
     padding: rem(4) rem(5);
     height: rem(96);
+
     &::before{
       content: '';
       display: block;
@@ -164,6 +176,8 @@ body{
       justify-content: center;
       width: rem(40);
       height: rem(40);
+      background-size: contain;
+      background-repeat: no-repeat;
       background-image: url(../icon/wa_logo.png);
     }
 
@@ -532,3 +546,4 @@ body{
     }
   }
 }
+
