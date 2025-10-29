@@ -26,7 +26,7 @@
                 <a href="#"><img src="./src/images/logo/fran1c.svg" alt="Логотип франчайзи 1С"></a>
               </div>
               <div class="header__phone">
-                <a href="tel:+77714078843"> Звоните: <br> +7 (771) 407-88-43</a>
+                <a href="https://wa.me/77714078843" target="_blank" rel="noopener noreferrer"> Звоните: <br> +7 (771) 407-88-43</a>
               </div>
           </div>
         </header>
@@ -112,33 +112,42 @@
           </section>
           <section class="user-form">
             <div class="user-form__wrapper">
-            <div class="user-form__content">
-              <h2 class="user-form__title">
-                Доверьте автоматизацию розничной точки и склада профессионалам!
-              </h2>
-              <p class="user-form__text">
-                Оставьте заявку прямо сейчас и получите верное решение для ваших задач!
-              </p>
-              <form class="user-form__body">
-                <div class="user-form__field">
-                  <label for="name" class="user-form__label">Имя</label>
-                  <input id="name" type="text" class="user-form__input" placeholder="Ваше имя">
-                </div>
-                <div class="user-form__field">
-                  <label for="phone" class="user-form__label">Телефон</label>
-                  <input id="phone" type="tel" class="user-form__input" placeholder="+7 (___) ___-__-__">
-                </div>
-                <button type="submit" class="user-form__button">Отправить</button>
-              </form>
-            </div>
-            <div class="cta__image">
-              <img src="./src/images/user_form.png" alt="Автоматизация">
-            </div>
-            <div class="cta__form">
-            </div>
+              <div class="user-form__content">
+                <h2 class="user-form__title">
+                  Доверьте автоматизацию Вашего бизнеса профессионалам!
+                </h2>
+                <p class="user-form__text">
+                  Оставьте заявку прямо сейчас и получите верное решение для ваших задач!
+                </p>
+                <form class="user-form__body"
+                      action="https://formspree.io/f/mvgvandl"
+                      method="POST">
+                  <div class="user-form__field">
+                    <label for="name" class="user-form__label">Имя</label>
+                    <input id="name"
+                           type="text"
+                           name="name"
+                           class="user-form__input"
+                           placeholder="Ваше имя"
+                           required>
+                  </div>
+                  <div class="user-form__field">
+                    <label for="phone" class="user-form__label">Телефон</label>
+                    <input id="phone"
+                           type="tel"
+                           name="phone"
+                           class="user-form__input"
+                           placeholder="+7 (___) ___-__-__"
+                           required>
+                  </div>
+                  <button type="submit" class="user-form__button">Отправить</button>
+                </form>
+              </div>
+              <div class="cta__image">
+                <img src="./src/images/user_form.png" alt="Автоматизация">
+              </div>
             </div>
           </section>
-          <section class="cta">
 
           </section>
         </div>
@@ -169,17 +178,22 @@
             <button class="modal__close" aria-label="Закрыть" data-modal-close>&times;</button>
             <h2 id="leadModalTitle" class="modal__title">Получите бесплатную консультацию</h2>
 
-            <form class="modal__form" action="#" method="post">
+            <form
+                    class="modal__form"
+                    action="https://formspree.io/f/mvgvandl"
+                    method="POST">
+
               <div class="modal__form-group">
                 <label for="leadName" class="visually-hidden">Ваше имя</label>
-                <input id="leadName" name="name" type="text" placeholder="Ваше имя" required>
+                <input id="leadName" name="Имя" type="text" placeholder="Ваше имя" required>
               </div>
 
               <div class="modal__form-group">
                 <label for="leadPhone" class="visually-hidden">Телефон</label>
-                <input id="leadPhone" name="phone" type="tel" placeholder="+7 (___) ___-__-__" required>
+                <input id="leadPhone" name="Телефон" type="tel" placeholder="+7 (___) ___-__-__" required>
               </div>
 
+              <input type="hidden" name="_subject" value="Заявка с всплывающей формы"> <!-- необязательно, но полезно -->
               <button type="submit" class="btn btn--primary">Отправить</button>
             </form>
           </div>
